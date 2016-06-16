@@ -72,38 +72,18 @@ li {
 	<div id="content">
 		<center>
 			<s:if test="#request.tclist.size()!=0">
-				<table>
+				<table border="1" width="500px" height="100px">
 					<tr>
-						<td><div align="left">课程名</div></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><div align="center">上课时间</div></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><div align="right">上课地点</div></td>
+						<td align="center">课程名</td>
+						<td align="center">上课时间</td>
+						<td align="right">上课地点</td>
 					</tr>
 
 					<s:iterator value="#request.tclist" id="course">
 						<tr>
-							<td height="20"><s:property value="cname" /></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td height="20"><s:property value="classtime" /></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td height="20"><s:property value="classroom" /></td>
+							<td height="40" align="center"><s:property value="cname" /></td>
+							<td height="40" align="center"><s:property value="classtime" /></td>
+							<td height="40" align="center"><s:property value="classroom" /></td>
 						</tr>
 					</s:iterator>
 				</table>
