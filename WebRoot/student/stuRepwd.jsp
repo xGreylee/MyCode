@@ -1,6 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
 <style type="text/css">
 div#header {
 	height: 25%;
@@ -56,14 +59,14 @@ li {
 	</div>
 
 	<div id="menu">
-		<h2>课表查询页面</h2>
+		<h2>学生功能模块</h2>
 		</br>
 		<ul>
-			<li>查询个人信息</li>
+			<li><a href="selectStu?method=selectStuInfo">查询个人信息</a></li>
 			<li></li>
 			<li>修改密码</li>
 			<li></li>
-			<li>查询课表</li>
+			<li><a href="course?method=scheduleQuery">查询课表</a></li>
 			<li></li>
 			<li>查询成绩</li>
 		</ul>
@@ -71,33 +74,20 @@ li {
 
 	<div id="content">
 		<center>
-			<s:if test="#request.list.size()!=0">
-				<table border="1" width="500px" height="100px">
-					<tr>
-						<td align="center">课程名</td>
-						<td align="center">上课时间</td>
-						<td align="center">上课地点</td>
-					</tr>
-					<s:iterator value="#request.list" id="course">
-						<tr>
-							<td height="40" align="center"><s:property value="cname" /></td>
-
-							<td height="40" align="center"><s:property value="classtime" /></td>
-
-							<td height="40" align="center"><s:property value="classroom" /></td>
-						</tr>
-					</s:iterator>
-				</table>
-
-
-			</s:if>
-			<s:else>
-				暂无数据！！
-			</s:else>
-
+			<h2>欢迎进入学生信息管理系统</h2>
 		</center>
+	</div>
 
-
+	<div id="content">
+		<center>
+			<s:form action="sturepwd" method="post">
+				<s:password name="pwd" lable="旧密码" />
+				<s:password name="newpwd1" lable="新密码" />
+				<s:password name="newpwd2" lable="确认新密码" />
+				<s:submit value="保存" theme="simple" />
+				<s:reset value="取消" theme="simple" />
+			</s:form>
+		</center>
 	</div>
 
 

@@ -6,7 +6,7 @@
 			<result name="student">/student/student.jsp</result>
 			<result name="teacher">/teacher/teacher.jsp</result>
 			<result name="manager">/manager/sysmanager.jsp</result>
-			<result name="success">/Login.jsp</result>
+			<result name="input">/Login.jsp</result>
 		</action>
 		
 		<action name="course" class="sms.action.CourseAction">

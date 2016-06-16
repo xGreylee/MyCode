@@ -51,7 +51,8 @@ public class LoginAction extends ActionSupport {
 			if(sdi.stucheckLogin(username, pwd)){
 				ActionContext context = ActionContext.getContext();
 				context.getSession().put("sno", username);
-				
+				context.getSession().put("oldpwd",pwd);
+
 				return "student";
 			}
 		}else if(flag.equals("b")){
