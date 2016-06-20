@@ -5,7 +5,7 @@
 		<action name="login" class="sms.action.LoginAction">
 			<result name="student">/student/student.jsp</result>
 			<result name="teacher">/teacher/teacher.jsp</result>
-			<result name="manager">/manager/sysmanager.jsp</result>
+			<result name="manager">/sysmanager/sysmanager.jsp</result>
 			<result name="input">/Login.jsp</result>
 		</action>
 		
@@ -23,6 +23,30 @@
 			<result name="tcrlist">/teacher/tcrInfo.jsp</result>
 		</action>
 		
+		<action name="score" class="sms.action.CourseAction">
+			<result name="scorelist">/student/stuScoreQuery.jsp</result>
+		</action>
+		
+		<action name="manager" class="sms.action.SmAction">
+			<result name="allstu">/sysmanager/stuManage.jsp</result>
+			<result name="alltcr">/sysmanager/tcrManage.jsp</result>
+		</action>
+		
+		<action name="manageStu" class="sms.action.StudentAction"  >
+			<result name="toaddstu">/sysmanager/add_student.jsp</result>
+			<result name="todeletestu">/sysmanager/delete_student.jsp</result>
+			<result name="toselectstu">/sysmanager/select_student.jsp</result>
+			<result name="toupdatestu">/sysmanager/update_student.jsp</result>
+			<result name="selectResult">/sysmanager/select_result.jsp</result>
+			<result name="allstu">/sysmanager/stuManage.jsp</result>
+		</action>
+		
+		<action name="manageTcr" class="sms.action.TeacherAction">
+			<result name="toaddtcr">/sysmanager/add_teacher.jsp</result>
+			<result name="todeletetcr">/sysmanager/delete_teacher.jsp</result>
+			<result name="toselecttcr">/sysmanager/select_teacher.jsp</result>
+			<result name="toupdatetcr">/sysmanager/update_teacher.jsp</result>
+		</action>
 		
 	</package>
 </struts>    

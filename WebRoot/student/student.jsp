@@ -68,7 +68,7 @@ li {
 			<li></li>
 			<li><a href="course?method=scheduleQuery">查询课表</a></li>
 			<li></li>
-			<li>查询成绩</li>
+			<li><a href="score?method=scoreQuery">查询成绩</li>
 		</ul>
 	</div>
 

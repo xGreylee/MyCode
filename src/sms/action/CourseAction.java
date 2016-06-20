@@ -11,7 +11,9 @@ import org.hibernate.Session;
 
 import sms.dao.CourseDao;
 import sms.dao.CourseDaoImp;
+import sms.domain.Score;
 import sms.domain.TCourses;
+import sms.domain.TSelectCourse;
 import sms.utils.HibernateSessionFactory;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -23,8 +25,8 @@ public class CourseAction extends ActionSupport {
 	public String sno;
 	public String tno;
 	private TCourses course;
-
 	private String hql;
+	
 
 	CourseDao cd = new CourseDaoImp();
 	ActionContext context = ActionContext.getContext();
@@ -49,10 +51,25 @@ public class CourseAction extends ActionSupport {
 			
 		}
 		
+		
+		if(method.equals("scoreQuery")){
+			
+			List<Score> score2 = new ArrayList<Score>();
+			score2  = cd.ScoreQuery(hql);
+			HttpServletRequest request = ServletActionContext.getRequest();
+			request.setAttribute("scorelist", score2);
+			return "scorelist";
+		}
+		
+		
+		
+		
+		
 		return ERROR;
-
 	}
 
+	
+	
 	public String getMethod() {
 		return method;
 	}

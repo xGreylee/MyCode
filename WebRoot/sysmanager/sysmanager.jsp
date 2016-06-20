@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-
+<%@taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -62,19 +62,18 @@ li {
 		<h2>管理员功能模块</h2>
 		</br>
 		<ul>
-			<li><a href="selectSm?method=selectSmInfo">查询个人信息</a></li>
-			<li></li>
 			<li>修改密码</li>
 			<li></li>
-			<li><a href="">管理学生信息</a></li>
+			<li><a href="manager?method=stumanage">管理学生信息</a></li>
 			<li></li>
-			<li><a href="">管理教师信息</a></li>
+			<li><a href="manager?method=tcrmanage">管理教师信息</a></li>
 		</ul>
 	</div>
 
 	<div id="content">
 		<center>
-			<h2>欢迎进入学生信息管理系统</h2>
+			
+			
 		</center>
 	</div>
 

@@ -8,7 +8,9 @@ import org.hibernate.Session;
 
 import com.opensymphony.xwork2.ActionContext;
 
+import sms.domain.Score;
 import sms.domain.TCourses;
+import sms.domain.TSelectCourse;
 import sms.domain.TStudents;
 import sms.domain.TTeachers;
 import sms.utils.HibernateSessionFactory;
@@ -21,9 +23,9 @@ public class CourseDaoImp implements CourseDao {
 	private String sno;
 	private String tno;
 	ActionContext context = ActionContext.getContext();
-	
+
 	public List<TCourses> classScheduleQuery(String hql) {
-		
+
 		sno = (String) context.getSession().get("sno");
 		hql = "select c.cname,c.classtime,c.classroom from TCourses as c,TSelectCourse as sc, TStudents as s  where sc.TCourses.cno=c.cno and sc.TStudents.sno=s.sno and s.sno="
 				+ sno;
@@ -31,73 +33,85 @@ public class CourseDaoImp implements CourseDao {
 		Query query = session.createQuery(hql);
 		List result = query.list();
 		List<TCourses> courses = new ArrayList<TCourses>();
-		
-		for(int i=0;i<result.size();i++){
-			
+
+		for (int i = 0; i < result.size(); i++) {
+
 			Object[] obj = (Object[]) result.get(i);
 			TCourses courses2 = new TCourses();
 			courses2.setCname(obj[0].toString());
 			courses2.setClasstime(obj[1].toString());
 			courses2.setClassroom(obj[2].toString());
-			
+
 			courses.add(courses2);
 		}
 		return courses;
-		
+
 	}
 
-	
 	@SuppressWarnings({ "unchecked", "finally" })
 	@Override
 	public List<TCourses> getCourses() {
 		List<TCourses> cours = null;
 		Session session = null;
-		try{
+		try {
 			session = HibernateSessionFactory.getSession();
 			Query query = session.createQuery("from TCourses as c");
 			cours = query.list();
-			
-		}catch(Exception e){
+
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			HibernateSessionFactory.closeSession();
 			return cours;
 		}
-		
-	
+
 	}
-	
-	public List<TCourses> teacherClassScheduleQuery(String hql){
-		
+
+	public List<TCourses> teacherClassScheduleQuery(String hql) {
+
 		tno = (String) context.getSession().get("tno");
-		hql="select c.cname,c.classtime,c.classroom from TCourses as c where c.TTeachers.tno=?";
+		hql = "select c.cname,c.classtime,c.classroom from TCourses as c where c.TTeachers.tno=?";
 		Session session = HibernateSessionFactory.getSession();
 		Query query = session.createQuery(hql);
 		query.setParameter(0, tno);
 
 		List result = query.list();
 		List<TCourses> courses = new ArrayList<TCourses>();
-		
-		for(int i=0;i<result.size();i++){
-			
+
+		for (int i = 0; i < result.size(); i++) {
+
 			Object[] obj = (Object[]) result.get(i);
 			TCourses courses2 = new TCourses();
 			courses2.setCname(obj[0].toString());
 			courses2.setClasstime(obj[1].toString());
 			courses2.setClassroom(obj[2].toString());
-			
+
 			courses.add(courses2);
 		}
 		return courses;
-		
+
 	}
 
-	
-	
-	
+	public List<Score> ScoreQuery(String hql) {
+		sno = (String) context.getSession().get("sno");
+		hql = "select c.cname,sc.score from TSelectCourse as sc,TStudents as s,TCourses as c where s.sno=sc.TStudents.sno and c.cno=sc.TCourses.cno and s.sno= "
+				+ sno;
+		Session session = HibernateSessionFactory.getSession();
+		Query query = session.createQuery(hql);
+		List<Score> score2 = new ArrayList<Score>();
+		List result = query.list();
+		for (int i = 0; i < result.size(); i++) {
+			Object[] obj = (Object[]) result.get(i);
+			Score score1 = new Score();
+			score1.setCname(obj[0].toString());
+			int s = Integer.parseInt(obj[1].toString());
+			score1.setScore(s);
+			score2.add(score1);
+		}
+		
+		
+		return score2;
 
-	
+	}
 
-	
-	
 }
