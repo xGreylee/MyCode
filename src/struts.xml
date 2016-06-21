@@ -27,6 +27,14 @@
 			<result name="scorelist">/student/stuScoreQuery.jsp</result>
 		</action>
 		
+			<action name="tostupwd" class="sms.action.StudentAction">
+			<result name="tonewpwd">/student/stuRepwd.jsp</result>
+		</action>	
+			
+			<action name="stupwd" class="sms.action.StudentAction">
+			<result name="newpwd">/student/stuInfo.jsp</result>
+		</action>	
+		
 		<action name="manager" class="sms.action.SmAction">
 			<result name="allstu">/sysmanager/stuManage.jsp</result>
 			<result name="alltcr">/sysmanager/tcrManage.jsp</result>

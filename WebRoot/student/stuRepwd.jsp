@@ -64,8 +64,6 @@ li {
 		<ul>
 			<li><a href="selectStu?method=selectStuInfo">查询个人信息</a></li>
 			<li></li>
-			<li>修改密码</li>
-			<li></li>
 			<li><a href="course?method=scheduleQuery">查询课表</a></li>
 			<li></li>
 			<li>查询成绩</li>
@@ -78,18 +76,29 @@ li {
 		</center>
 	</div>
 
+
 	<div id="content">
 		<center>
-			<s:form action="sturepwd" method="post">
-				<s:password name="pwd" lable="旧密码" />
-				<s:password name="newpwd1" lable="新密码" />
-				<s:password name="newpwd2" lable="确认新密码" />
-				<s:submit value="保存" theme="simple" />
+			<s:form action="sturepwd?method=updpwd" method="post">
+				<s:password name="pwd" id="pw1" lable="新密码" />
+				<s:password name="pwd" id="pw2" lable="确认新密码"  onBlur="checkRepwd()"/><div id="tishi"></div>
+				<s:submit value="保存"  theme="simple" />
 				<s:reset value="取消" theme="simple" />
 			</s:form>
 		</center>
 	</div>
+	<script type="text/javascript">
+		function checkRepwd() {
+			var pw1 = document.getElementById("pw1").value;
+			var pw2 = document.getElementById("pw2").value;
+			if (pw1 == pw2) {
+				document.innerHTML = "<font color='green'>两次密码相同</font>";
+			} else {
+				document.getElementById("tishi").innerHTML = "<font color='red'>两次密码不相同</font>";
 
+			}
+		}
+	</script>
 
 
 
