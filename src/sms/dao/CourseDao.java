@@ -12,5 +12,5 @@ public interface CourseDao {
 	public List<TCourses> getCourses();
 	public List<TCourses> teacherClassScheduleQuery(String hql);
 	public List<Score>ScoreQuery(String hql);
-
+//    public List<Score>
 }
