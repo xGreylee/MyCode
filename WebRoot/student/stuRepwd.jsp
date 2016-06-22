@@ -105,10 +105,6 @@ li {
 		</center>
 	</div>
 
-	
-
-
-
 
 </body>
 </html>

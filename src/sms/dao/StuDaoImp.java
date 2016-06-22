@@ -18,7 +18,7 @@ import sms.utils.HibernateUtil;
 public class StuDaoImp implements StuDao {
 
 	private String sno;
-	private String pwd;
+
 
 	@SuppressWarnings("rawtypes")
 	@Override
@@ -62,26 +62,6 @@ public class StuDaoImp implements StuDao {
 			return stu;
 		}
 
-	}
-
-	public boolean stuRePwd(String newpwd1, String newpwd2) {
-		Session session = null;
-		ActionContext context = ActionContext.getContext();
-		try {
-			sno = (String) context.getSession().get("sno");
-			session = HibernateSessionFactory.getSession();
-			// Query query = session
-			// .createQuery("select s.pwd:oldpwd from TStudent as s where s.sno="
-			// + sno);
-			// query.setString(oldpwd, arg1);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			HibernateSessionFactory.closeSession();
-
-			// String hql="select pwd from TStudents as s where s.sno=?";
-			return false;
-		}
 	}
 
 	

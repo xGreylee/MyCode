@@ -68,7 +68,10 @@ public class StudentAction extends ActionSupport {
 				return "stulist";
 			}
 		}
-
+		if(method.equals("tonewpwd")){
+			return "tonewpwd";
+		}
+		
 		if (method.equals("toaddstu")) {
 			return "toaddstu";
 		}
@@ -119,6 +122,7 @@ public class StudentAction extends ActionSupport {
 			return "selectResult";
 		}
 
+
 		if(method.equals("updatestupwd")){
 			HttpServletRequest request = ServletActionContext.getRequest();
 			ActionContext context = ActionContext.getContext();
@@ -132,6 +136,7 @@ public class StudentAction extends ActionSupport {
 		
 			request.setAttribute("stulist", stus);
 			return "stulist";
+
 		}
 		
 
