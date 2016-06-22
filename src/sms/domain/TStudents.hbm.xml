@@ -28,7 +28,7 @@
         <property name="classes" type="java.lang.String">
             <column name="classes" />
         </property>
-        <set name="TSelectCourses" inverse="true">
+        <set name="TSelectCourses" inverse="true" cascade="delete">
             <key>
                 <column name="sno" not-null="true" />
             </key>

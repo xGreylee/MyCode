@@ -26,11 +26,12 @@ public class SmAction extends ActionSupport {
 	private String smid;
 	private String newpwd;
 	private TSysManager manager;
+//	private TStudents student;
 	
 	SmDao md = new SmDaoImp();
 	StuDao sd = new StuDaoImp();
 	TcrDao td = new TcrDaoImp();
-	
+	List<TSysManager> sm = md.getSysManager();
 	
 	public String execute() throws Exception {
 		
@@ -102,6 +103,16 @@ public class SmAction extends ActionSupport {
 	public void setManager(TSysManager manager) {
 		this.manager = manager;
 	}
+
+//	public TStudents getStudent() {
+//		return student;
+//	}
+//
+//	public void setStudent(TStudents student) {
+//		this.student = student;
+//	}
+	
+	
 	
 	
 }
