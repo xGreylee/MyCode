@@ -62,15 +62,14 @@ li {
 		<h2>管理员功能模块</h2>
 		</br>
 		<ul>
-			<li>修改密码</li>
+			<li><a href="tosmpwd?method=toRepwd">修改密码</a></li>
 			<li></li>
-			<li><a href="manager?method=addtcr">添加教师信息</a></li>
+			<li><a href="manager?method=stumanage">管理学生信息</a></li>
 			<li></li>
-			<li><a href="manager?method=deletetcr">删除教师信息</a></li>
+			<li><a href="manageTcr?method=toaddtcr">添加教师信息</a></li>
 			<li></li>
-			<li><a href="manager?method=selecttcr">查询教师信息</a></li>
+			<li><a href="manageTcr?method=toselecttcr">查询教师信息</a></li>
 			<li></li>
-			<li><a href="manager?method=updatetcr">修改教师信息</a></li>
 		</ul>
 	</div>
 
@@ -86,6 +85,11 @@ li {
 						<tr>
 							<td height="40" align="center"><s:property value="tno" /></td>
 							<td height="40" align="center"><s:property value="tname" /></td>
+							<td height="40" align="center">
+								<a href="manageTcr?method=toupdatetcr&&id=<s:property value="tno"/>">编辑</a>
+								<td>
+								<a href="manageTcr?method=deletetcr&&id=<s:property value="tno"/>">删除</a>
+							</td>
 						</tr>
 					</s:iterator>
 				</table>

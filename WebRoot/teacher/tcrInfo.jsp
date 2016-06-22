@@ -58,15 +58,13 @@ li {
 	<div id="menu">
 		<h2>个人信息查询页面</h2>
 		</br>
-				<ul>
-					<li>查询个人信息</li>
-					<li></li>
-					<li>修改密码</li>
-					<li></li>
-					<li>查询课表</li>
-					<li></li>
-					<li>录入成绩</li>
-				</ul>
+		<ul>
+			<li><a href="totcrpwd?method=toRepwd">修改密码</a></li>
+			<li></li>
+			<li><a href="course?method=tcrScheduleQuery">查询课表</a></li>
+			<li></li>
+			<li>录入成绩</li>
+		</ul>
 	</div>
 
 	<div id="content">
@@ -75,20 +73,24 @@ li {
 				<table>
 					<s:iterator value="#request.tcrlist" var="teacher">
 						<tr>
-							<td height="20"><div align="left">教师工号：</div></td>
-							<td height="20"><div align="right"><s:property value="#teacher.tno"/></div></td>
+							<td height="20">教师工号：</td>
+							<td height="20"><s:property value="#teacher.tno"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">教师姓名：</div></td>
-							<td height="20"><div align="right"><s:property value="#teacher.tname"/></div></td>
+							<td height="20">教师姓名：</td>
+							<td height="20"><s:property value="#teacher.tname"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">教师年龄：</div></td>
-							<td height="20"><div align="right"><s:property value="#teacher.age"/></div></td>
+							<td height="20">教师密码：</td>
+							<td height="20"><s:property value="#teacher.pwd"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">教师学院：</div></td>
-							<td height="20"><div align="right"><s:property value="#teacher.institude"/></div></td>
+							<td height="20">教师年龄：</td>
+							<td height="20"><s:property value="#teacher.age"/></td>
+						</tr>
+						<tr>
+							<td height="20">教师学院：</div></td>
+							<td height="20"><s:property value="#teacher.institude"/></td>
 						</tr>
 						
 					</s:iterator>

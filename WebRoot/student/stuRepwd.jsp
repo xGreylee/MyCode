@@ -4,6 +4,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+<script type="text/javascript">
+		function checkRepwd() {
+			var psw1 = document.getElementById("pw1").value;
+			var psw2 = document.getElementById("pw2").value;
+			var tishi = document.getElementById("tishi");
+			
+			if (psw1 == psw2) {
+			 	return true;
+			} else {
+				alert( "两次密码不相同") ;
+				return  false;
+			}
+		}
+	</script>
 <style type="text/css">
 div#header {
 	height: 25%;
@@ -59,37 +73,39 @@ li {
 	</div>
 
 	<div id="menu">
-		<h2>学生功能模块</h2>
+		<h2>学生修改密码页面</h2>
 		</br>
 		<ul>
 			<li><a href="selectStu?method=selectStuInfo">查询个人信息</a></li>
 			<li></li>
-			<li>修改密码</li>
-			<li></li>
 			<li><a href="course?method=scheduleQuery">查询课表</a></li>
 			<li></li>
-			<li>查询成绩</li>
+			<li><a href="score?method=scoreQuery">查询成绩</a></li>
 		</ul>
 	</div>
 
 	<div id="content">
 		<center>
-			<h2>欢迎进入学生信息管理系统</h2>
+			<table>
+				<s:form action="sturepwd?method=updatestupwd" method="post"  onsubmit="return checkRepwd()" >
+					<tr>
+						<s:hidden name="student.sno"></s:hidden>
+						<td><s:password name="pwd" label="新密码" id="pw1" /></td>
+					</tr>
+					<tr></tr>
+					<tr>
+						<td><s:password name="newpwd" label="确认新密码" id="pw2" /></td> 
+					</tr>
+					<tr>
+						<td><s:submit value="保存" theme="simple" /></td>
+						<td><s:reset value="取消" theme="simple" /></td>
+					</tr>
+				</s:form>
+			</table>
 		</center>
 	</div>
 
-	<div id="content">
-		<center>
-			<s:form action="sturepwd" method="post">
-				<s:password name="pwd" lable="旧密码" />
-				<s:password name="newpwd1" lable="新密码" />
-				<s:password name="newpwd2" lable="确认新密码" />
-				<s:submit value="保存" theme="simple" />
-				<s:reset value="取消" theme="simple" />
-			</s:form>
-		</center>
-	</div>
-
+	
 
 
 

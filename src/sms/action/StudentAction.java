@@ -10,6 +10,7 @@ import sms.dao.StuDao;
 import sms.dao.StuDaoImp;
 import sms.domain.TStudents;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class StudentAction extends ActionSupport {
@@ -18,9 +19,20 @@ public class StudentAction extends ActionSupport {
 	private String hql;
 	private TStudents student;
 	public String id;
+	private String newpwd;
+	
 	StuDao sd = new StuDaoImp();
 	List<TStudents> stu = sd.getStudents();
 
+	public String getNewpwd() {
+		return newpwd;
+	}
+
+	public void setNewpwd(String newpwd) {
+		this.newpwd = newpwd;
+	}
+
+	
 	public String getId() {
 		return id;
 	}
@@ -70,6 +82,10 @@ public class StudentAction extends ActionSupport {
 			return "toselectstu";
 		}
 		
+		if(method.equals("toRepwd")){
+			return "toRepwd";
+		}
+		
 		if (method.equals("updatestu")) {
 			sd.updateStu(student);
 			List<TStudents> stu2 = sd.showStuList(hql);
@@ -97,13 +113,26 @@ public class StudentAction extends ActionSupport {
 		}
 		
 		if(method.equals("selectstu")){
-			
 			this.student = sd.getStu(student.getSno());
 			HttpServletRequest request = ServletActionContext.getRequest();
-			request.setAttribute("selectResult", this.student );
+			request.setAttribute("selectResult", student );
 			return "selectResult";
 		}
 
+		if(method.equals("updatestupwd")){
+			HttpServletRequest request = ServletActionContext.getRequest();
+			ActionContext context = ActionContext.getContext();
+			id = (String) context.getSession().get("sno");
+			TStudents students = sd.getStu(id);
+			students.setSno(id);
+			students.setPwd(newpwd);
+		
+			sd.updateStu(students);
+			List<TStudents> stus=sd.getStudents();
+		
+			request.setAttribute("stulist", stus);
+			return "stulist";
+		}
 		
 
 		return ERROR;

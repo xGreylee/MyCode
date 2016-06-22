@@ -64,11 +64,11 @@ li {
 		<ul>
 			<li><a href="selectStu?method=selectStuInfo">查询个人信息</a></li>
 			<li></li>
-			<li>修改密码</li>
+			<li><a href="tostupwd?method=toRepwd">修改密码</a></li>
 			<li></li>
 			<li><a href="course?method=scheduleQuery">查询课表</a></li>
 			<li></li>
-			<li><a href="score?method=scoreQuery">查询成绩</li>
+			<li><a href="score?method=scoreQuery">查询成绩</a></li>
 		</ul>
 	</div>
 

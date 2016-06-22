@@ -27,6 +27,30 @@
 			<result name="scorelist">/student/stuScoreQuery.jsp</result>
 		</action>
 		
+		<action name="tostupwd" class="sms.action.StudentAction">
+			<result name="toRepwd">/student/stuRepwd.jsp</result>
+		</action>	
+		
+		<action name="totcrpwd" class="sms.action.TeacherAction">
+			<result name="toRepwd">/teacher/tcrRepwd.jsp</result>
+		</action>	
+		
+		<action name="tosmpwd" class="sms.action.SmAction">
+			<result name="toRepwd">/sysmanager/smRepwd.jsp</result>
+		</action>	
+		
+		<action name="sturepwd" class="sms.action.StudentAction">
+			<result name="stulist">/student/stuInfo.jsp</result>
+		</action>
+		
+		<action name="tcrrepwd" class="sms.action.TeacherAction">
+			<result name="tcrlist">/teacher/tcrInfo.jsp</result>
+		</action>
+		
+		<action name="smrepwd" class="sms.action.SmAction">
+			<result name="smlist">/sysmanager/SmInfo.jsp</result>
+		</action>
+		
 		<action name="manager" class="sms.action.SmAction">
 			<result name="allstu">/sysmanager/stuManage.jsp</result>
 			<result name="alltcr">/sysmanager/tcrManage.jsp</result>
@@ -46,6 +70,8 @@
 			<result name="todeletetcr">/sysmanager/delete_teacher.jsp</result>
 			<result name="toselecttcr">/sysmanager/select_teacher.jsp</result>
 			<result name="toupdatetcr">/sysmanager/update_teacher.jsp</result>
+			<result name="selectTcrResult">/sysmanager/select_tcr_result.jsp</result>
+			<result name="alltcr">/sysmanager/tcrManage.jsp</result>
 		</action>
 		
 	</package>

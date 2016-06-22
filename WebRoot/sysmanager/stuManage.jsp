@@ -63,7 +63,9 @@ li {
 		<h2>管理员功能模块</h2>
 		</br>
 		<ul>
-			<li>修改密码</li>
+			<li><a href="tosmpwd?method=toRepwd">修改密码</a></li>
+			<li></li>
+			<li><a href="manager?method=tcrmanage">管理教师信息</a></li>
 			<li></li>
 			<li><a href="manageStu?method=toaddstu">添加学生信息</a></li>
 			<li></li>

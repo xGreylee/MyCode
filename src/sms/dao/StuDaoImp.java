@@ -50,7 +50,6 @@ public class StuDaoImp implements StuDao {
 
 		try {
 			sno = (String) context.getSession().get("sno");
-
 			session = HibernateSessionFactory.getSession();
 			Query query = session
 					.createQuery("from TStudents as s where s.sno=" + sno);
@@ -70,7 +69,6 @@ public class StuDaoImp implements StuDao {
 		ActionContext context = ActionContext.getContext();
 		try {
 			sno = (String) context.getSession().get("sno");
-			pwd = (String) context.getSession().get("oldpwd");
 			session = HibernateSessionFactory.getSession();
 			// Query query = session
 			// .createQuery("select s.pwd:oldpwd from TStudent as s where s.sno="

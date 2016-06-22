@@ -56,13 +56,20 @@ li {
 	</div>
 
 	<div id="menu">
-		<h2>学生信息查询页面</h2>
+		<h2>学生信息查询结果页面</h2>
+		<ul>
+			<li><a href="tosmpwd?method=toRepwd">修改密码</a></li>
+			<li></li>
+			<li><a href="manager?method=stumanage">管理学生信息</a></li>
+			<li></li>
+			<li><a href="manager?method=tcrmanage">管理教师信息</a></li>
+		</ul>
 	</div>
 
 	<div id="content">
 		<center>
-			<s:if test="(#request.selectResult.list).size()!=0">
-				<table border="1" width="500px" height="100px">
+			<s:if test="#request.selectResultsize!=0">
+				<table border="1" width="600px" height="100px">
 					<tr>
 						<td align="center">学生学号</td>
 						<td align="center">学生姓名</td>
@@ -72,7 +79,7 @@ li {
 						<td align="center">学生学院</td>
 						<td align="center">学生班级</td>
 					</tr>
-					<s:iterator value="#request.selectResult.list" id="student">
+					<s:iterator value="#request.selectResult" id="student">
 						<tr>
 							<td height="40" align="center"><s:property value="sno" /></td>
 							<td height="40" align="center"><s:property value="sname" /></td>

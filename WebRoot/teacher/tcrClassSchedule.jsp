@@ -56,14 +56,14 @@ li {
 	</div>
 
 	<div id="menu">
-		<h2>课表查询页面</h2>
+		<h2>教师课表查询页面</h2>
 		</br>
 		<ul>
-			<li>查询个人信息</li>
+			<li><a href="selectTcr?method=selectTcrInfo">查询个人信息</a></li>
 			<li></li>
-			<li>修改密码</li>
+			<li><a href="totcrpwd?method=toRepwd">修改密码</a></li>
 			<li></li>
-			<li>查询课表</li>
+			<li><a href="course?method=tcrScheduleQuery">查询课表</a></li>
 			<li></li>
 			<li>录入成绩</li>
 		</ul>
@@ -76,7 +76,7 @@ li {
 					<tr>
 						<td align="center">课程名</td>
 						<td align="center">上课时间</td>
-						<td align="right">上课地点</td>
+						<td align="center">上课地点</td>
 					</tr>
 
 					<s:iterator value="#request.tclist" id="course">

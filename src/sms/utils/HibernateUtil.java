@@ -14,6 +14,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import sms.domain.TStudents;
+import sms.domain.TSysManager;
 import sms.domain.TTeachers;
 
 
@@ -79,10 +80,29 @@ public class HibernateUtil {
 		}
 	}
 	// 更新操作
-	public static boolean updateStu(Object entity) {
+	public static boolean updateStu(TStudents entity) {
 		Session session = null;
 		Transaction tran = null;
-		TStudents newStu = new TStudents();
+//		TStudents newStu = new TStudents();
+		try {
+			session = HibernateSessionFactory.getSession();
+			tran = session.beginTransaction();
+			session.update(entity);
+			tran.commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println("更新数据出错");
+			e.printStackTrace();
+			return false;
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+	}
+
+	public static boolean updateTcr(TTeachers entity) {
+		Session session = null;
+		Transaction tran = null;
+		
 		try {
 			session = HibernateSessionFactory.getSession();
 			tran = session.beginTransaction();
@@ -96,8 +116,8 @@ public class HibernateUtil {
 			HibernateSessionFactory.closeSession();
 		}
 	}
-
-	public static boolean updateTcr(Object entity) {
+	
+	public static boolean updateSm(TSysManager entity) {
 		Session session = null;
 		Transaction tran = null;
 		
@@ -109,6 +129,7 @@ public class HibernateUtil {
 			return true;
 		} catch (Exception e) {
 			System.out.println("更新数据出错");
+			e.printStackTrace();
 			return false;
 		}finally{
 			HibernateSessionFactory.closeSession();

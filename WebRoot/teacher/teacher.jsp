@@ -64,7 +64,7 @@ li {
 		<ul>
 			<li><a href="selectTcr?method=selectTcrInfo">查询个人信息</a></li>
 			<li></li>
-			<li>修改密码</li>
+			<li><a href="totcrpwd?method=toRepwd">修改密码</a></li>
 			<li></li>
 			<li><a href="course?method=tcrScheduleQuery">查询课表</a></li>
 			<li></li>

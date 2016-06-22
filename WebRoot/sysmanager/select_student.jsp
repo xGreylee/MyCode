@@ -60,7 +60,14 @@ li {
 	</div>
 
 	<div id="menu">
-		<h2>添加学生页面</h2>
+		<h2>查询学生页面</h2>
+		<ul>
+			<li><a href="tosmpwd?method=toRepwd">修改密码</a></li>
+			<li></li>
+			<li><a href="manager?method=stumanage">管理学生信息</a></li>
+			<li></li>
+			<li><a href="manager?method=tcrmanage">管理教师信息</a></li>
+		</ul>
 	</div>
 
 	<div id="content">

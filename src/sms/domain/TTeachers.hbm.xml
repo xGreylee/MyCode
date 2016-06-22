@@ -22,17 +22,17 @@
         <property name="institude" type="java.lang.String">
             <column name="institude" />
         </property>
-        <set name="TCourseses" inverse="true">
+        <set name="TCourseses" inverse="true" cascade="delete">
             <key>
                 <column name="tno" />
             </key>
             <one-to-many class="sms.domain.TCourses" />
         </set>
-        <set name="TCourseses_1" inverse="true">
-            <key>
-                <column name="tno" />
-            </key>
-            <one-to-many class="sms.domain.TCourses" />
-        </set>
+<!--         <set name="TCourseses_1" inverse="true"> -->
+<!--             <key> -->
+<!--                 <column name="tno" /> -->
+<!--             </key> -->
+<!--             <one-to-many class="sms.domain.TCourses" /> -->
+<!--         </set> -->
     </class>
 </hibernate-mapping>

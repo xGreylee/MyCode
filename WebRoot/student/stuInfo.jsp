@@ -58,15 +58,13 @@ li {
 	<div id="menu">
 		<h2>个人信息表查询页面</h2>
 		</br>
-				<ul>
-					<li>查询个人信息</li>
-					<li></li>
-					<li>修改密码</li>
-					<li></li>
-					<li>查询课表</li>
-					<li></li>
-					<li>查询成绩</li>
-				</ul>
+		<ul>
+			<li><a href="tostupwd?method=toRepwd">修改密码</a></li>
+			<li></li>
+			<li><a href="course?method=scheduleQuery">查询课表</a></li>
+			<li></li>
+			<li><a href="score?method=scoreQuery">查询成绩</a></li>
+		</ul>
 	</div>
 
 	<div id="content">
@@ -75,28 +73,32 @@ li {
 				<table>
 					<s:iterator value="#request.stulist" var="student">
 						<tr>
-							<td height="20"><div align="left">学生学号：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.sno"/></div></td>
+							<td height="20">学生学号：</td>
+							<td height="20"><s:property value="#student.sno"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">学生姓名：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.sname"/></div></td>
+							<td height="20">学生姓名：</td>
+							<td height="20"><s:property value="#student.sname"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">学生年龄：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.age"/></div></td>
+							<td height="20">学生密码：</td>
+							<td height="20"><s:property value="#student.pwd"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">学生性别：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.sex"/></div></td>
+							<td height="20">学生年龄：</td>
+							<td height="20"><s:property value="#student.age"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">学生学院：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.institudes"/></div></td>
+							<td height="20">学生性别：</div></td>
+							<td height="20"><s:property value="#student.sex"/></td>
 						</tr>
 						<tr>
-							<td height="20"><div align="left">学生班级：</div></td>
-							<td height="20"><div align="right"><s:property value="#student.classes"/></div></td>
+							<td height="20">学生学院：</td>
+							<td height="20"><s:property value="#student.institudes"/></td>
+						</tr>
+						<tr>
+							<td height="20">学生班级：</div></td>
+							<td height="20"><s:property value="#student.classes"/></td>
 						</tr>
 					</s:iterator>
 				</table>
